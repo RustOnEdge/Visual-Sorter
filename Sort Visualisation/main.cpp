@@ -1,9 +1,10 @@
 #define SDL_MAIN_HANDLED
-#include<SDL2/SDL.h>
-#include<iostream>
-#include<random>
-#include<ranges>
-#include<algorithm>
+#include <SDL2/SDL.h>
+#include <iostream>
+#include <random>
+#include <ranges>
+#include <algorithm>
+#include "algorithms.h"
 
 void draw_state(
 	std::vector<int>& v,
@@ -103,29 +104,27 @@ void mergeSort(std::vector<int>& arr, int left, int right)
     merge(arr, left, mid, right);
 }
 
-
 int main() {
+    std::random_device rd;
+    std::mt19937 gen(rd()); // standard mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<int> d(1, 99); // specify the distribution range
+    std::vector<int> v;
 
-	std::random_device rd;
-	std::mt19937 gen(rd()); // standard mersenne_twister_engine seeded with rd()
-	std::uniform_int_distribution<int> d(1, 99); // specify the distribution range
-	std::vector<int> v;
+    // populating vector with random numbers
+    for (int i = 0; i < 100; i++) {
+        v.push_back(d(rd));
+        std::cout << v[i] << " ";
+    }
 
-	// populating vector with random numbers
-	for (int i = 0; i < 100; i++) {
-		v.push_back(d(rd));
-        std::cout << v[i] <<" ";
-	}
+    SDL_Window* window = nullptr;
+    SDL_Renderer* renderer = nullptr;
 
-	SDL_Window* window = nullptr;
-	SDL_Renderer* renderer = nullptr;
+    SDL_CreateWindowAndRenderer(1000, 1000, 0, &window, &renderer);
+    SDL_RenderSetScale(renderer, 10, 10);
 
-	SDL_CreateWindowAndRenderer(1000, 1000, 0, &window, &renderer);
-	SDL_RenderSetScale(renderer, 10, 10);
+    size_t sort_speed = 10;
 
-	size_t sort_speed = 10;
+    bubble_sort(v, renderer, sort_speed);
 
-	bubble_sort(v, renderer, sort_speed);
-
-	return 0;
+    return 0;
 }
