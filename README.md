@@ -126,28 +126,10 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-## Acknowledgments
-
-### Core Inspirations
-- Sorting algorithm research
-- Data visualization techniques
-- Educational tools for algorithm understanding
-
-### Tools & Technologies
-- Visual Studio
-- .NET Framework
-- Windows Presentation Foundation (WPF)
-
-### Community
-- Algorithm visualization community
-- Open source developers
-- Educational resources
-
 ---
 
 <div align="center">
 
-### Try It Now!
 
 [Latest Release](https://github.com/RustOnEdge/Visual-Sorter/releases) | [Report Issues](https://github.com/RustOnEdge/Visual-Sorter/issues)
 
